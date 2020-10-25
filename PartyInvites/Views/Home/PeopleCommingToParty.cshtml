@@ -1,0 +1,30 @@
+﻿@model IEnumerable<GuestResponse>
+
+@{
+    ViewData["Title"] = "People comming to the party";
+}
+
+<h1>@ViewBag.Title</h1>
+
+<p>@Model.Count() persons are comming to the party.</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (GuestResponse r in Model)
+        {
+            <tr>
+                <td>@r.Name</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="GuestList" class="btn btn-primary">See all answers</a>
+<a asp-action="Index" class="btn btn-secondary">Home</a>
+
+

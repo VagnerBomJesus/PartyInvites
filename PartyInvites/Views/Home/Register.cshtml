@@ -1,0 +1,33 @@
+﻿@model GuestResponse
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+<h1>Are you comming to the party?</h1>
+
+<form asp-action="Register" method="post">
+    <div class="form-group">
+        <div asp-validation-summary="All" class="alert-danger text-danger"></div>
+
+        <label asp-for="Name">Name</label>
+        <input asp-for="Name" class="form-control" class="form-group" placeholder="Enter your name" />
+
+        <label asp-for="Phone">Phone</label>
+        <input asp-for="Phone" class="form-control" class="form-group" placeholder="Enter your phone number" />
+
+        <label asp-for="Email">Email</label>
+        <input asp-for="Email" class="form-control" placeholder="Enter your email address" />
+
+        <label asp-for="WillAttend">Are you comming to the party</label>
+        <select asp-for="WillAttend" class="form-control">
+            <option value="">I don't know yet</option>
+            <option value="true">Yes, I will go to the party</option>
+            <option value="false">No, sorry I can't make it</option>
+        </select>
+
+        <div class="mt-4">
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+        </div>
+</form>
